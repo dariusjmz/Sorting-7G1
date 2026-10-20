@@ -11,4 +11,9 @@ foreach (int i in test)
 
 Console.WriteLine("------");
 
-sort.Shell(test, (int a, int b) => a > b);
+test = sort.Shell(test, (int a, int b) => a > b);
+
+foreach (int i in test)
+{
+    Console.WriteLine(i);
+}

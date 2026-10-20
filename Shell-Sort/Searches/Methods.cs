@@ -11,33 +11,28 @@ namespace Searches
         public delegate bool criteria(T a, T b);
 
 
-        public void Shell(T[] array, criteria C)
+        public T[] Shell(T[] array, criteria C)
         {
-            int size = array.Length;
-            int half = size / 2;
-            bool change = false;
-            while(half > 1 || change == true)
+            int n = array.Length;
+
+            for (int gap = n / 2; gap > 0; gap /= 2)
             {
-                change = false;
-                for (int i = 0; i < size - half; i++)
+                for (int i = gap; i < n; i++)
                 {
-                    if (C(array[i], array[i + half]))
+                    T temp = array[i];
+                    int j = i;
+
+                    while (j >= gap && C(array[j - gap], temp))
                     {
-                        T temporal = array[i];
-                        array[i] = array[i + half];
-                        array[i + half] = temporal;
-                        change = true;
+                        array[j] = array[j - gap];
+                        j -= gap;
                     }
+                    array[j] = temp;
                 }
-                if(half > 1)
-                {
-                    half /= 2;
-                }
+
             }
-            for(int i = 0; i < size; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            return array;
+        
         }
     }
 }
