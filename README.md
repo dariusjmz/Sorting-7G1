@@ -9,7 +9,7 @@
 - ### Insertion Sort: Víctor Rafael Sánchez Navarro y Miguel Ángel Martínez Pérez
 - ### Shell Sort: Roger Alexander García Linares, Elisa Shinsai Pérez Ruiz y José Jesús Ambriz Peimbertd
 - ### Quick Sort: Darío Jiménez Guzmán, Erick Rafael López Silva y Karen Michelle Pérez Campbell
-- ### Redix Sort: Alexey Shalisko Núñez y Juan Manuel Padilla Ledezma
+- ### Radix Sort: Alexey Shalisko Núñez y Juan Manuel Padilla Ledezma
 - ### Merge Sort: Diego Alejandro Moreno Medina y Tristán Sebastián Prudencio Barajas
 
 ---
