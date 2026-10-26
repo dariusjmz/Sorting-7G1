@@ -1,11 +1,21 @@
 ﻿using método_radix;
+using System.Diagnostics;
 
-int[] numeros = { 1000, 23, 421, 3000, 21, 64, 57, 89, 90 };
-List<int> numerosL = new List<int> { 1000, 23, 421, 3000, 24, 14, 57, 89, 90 };
-List<String> nombres = new List<string> { "juan", "alex", "bernardo", "yael" };
+Random rnd = new Random();
+List<int> numeros = new List<int>();
+
+for (int i = 0; i < 1_000_000; i++)
+{
+    numeros.Add(rnd.Next(-1_000_000, 1_000_000));
+}
+
+Console.WriteLine("------");
 
 Radix radix = new Radix();
-radix.Ordenar(numerosL, n => n.ToString().PadLeft(10, '0'));
-Console.WriteLine(string.Join(',', numerosL));
-radix.Ordenar(nombres, n => n);
-Console.WriteLine(string.Join(',', nombres));
+Stopwatch cronometro = new Stopwatch();
+
+cronometro.Start();
+radix.Ordenar(numeros, n => (n + 1_000_000).ToString().PadLeft(7, '0'));
+cronometro.Stop();
+
+Console.WriteLine("Tiempo transcurrido (s): " + cronometro.ElapsedMilliseconds / 1000.0);
