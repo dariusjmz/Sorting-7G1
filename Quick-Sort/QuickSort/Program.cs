@@ -25,10 +25,10 @@ array = sort.sort(array, (int a, int b) => a < b);
 
 cronometro.Stop();
 
-/* foreach(int i in array)
+for(int i = 999989; i <1000000; i++)
 {
-    Console.Write(i + " ");
-} */
+    Console.WriteLine(array[i]);
+}
 
 Console.WriteLine("Tiempo transcurrido (s): " + cronometro.ElapsedMilliseconds / 1000.0);
 
